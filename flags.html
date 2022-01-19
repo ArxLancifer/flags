@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βρες τους γείτονες</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="countries.js"></script>
+    
+    <script>
+        // Ένας βοηθητικός πίνακας που θα περιέχει τις χώρες από το countries.js σε λίγο πιο βολική μορφή
+        let allCountries = shuffleArray(countryObjects);
+        // πχ. allCountries['GRE'] = { code2: "GR", name: "Greece"}, ή κάτι παρόμοιο 
+
+        // Εδώ μπορείτε να βάλετε τον κώδικα για όλο το παιχνίδι
+        // Μπορείτε γράψετε κλάσεις που να έχουν κάποια συμπεριφορά, 
+        // π.χ. Game, PlayingCountry, Neighbour, ...
+        // ή να και ακολουθήσετε άλλη τακτική, που να σας είναι πιο προσιτή
+
+        document.addEventListener("DOMContentLoaded", () => {
+            //start a new Game
+            //...
+            
+               // const warning = document.getElementsByTagName("section")[0];
+                
+                
+                document.querySelector("#btn-new-game").addEventListener("click", () => {
+            
+            });
+            
+            //event listener to next round button
+            document.querySelector("#btn-next-round").addEventListener("click", () => {
+                // ...
+            })
+
+        });
+    </script>
+</head>
+
+<body onload="my_country_flag(); fetch_borders();">
+    <section>
+        <div>
+            <p>Σίγουρα; Θα χάσετε όλο σας το σκορ!</p>
+            <div>
+            <button class="ok">OK</button>
+            <button class="cancel">Cancel</button>
+            </div>
+        </div>
+    </section>
+    <div class="game-panel">
+
+        <div id="sidebar">
+            <h3>Βρές τους γείτονες</h3>
+            <div id="score">
+                <div>
+                <h4>Γυρος</h4>
+                <h4>Σκορ</h4>
+                </div>
+                <div>
+                <h4>round</h4>
+                <h4>Score</h4>
+                </div>
+            </div>
+                <button id="btn-next-round" disabled>Επόμενη χώρα</button>
+                <button id="btn-new-game">Νέο παιχνίδι</button>
+        </div>
+        <div id="my-country">
+            <div id="my-country-flag">
+            </div>
+            
+            <div id="progress">
+               <div></div> 
+            </div> 
+            <div id="neighbours-panel">
+                
+                
+                <div id="next-round-panel">
+                    <div class="warning"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- 
+                Γράψτε εδώ τον κώδικα HTML που χρειάζεστε για το παιχνίδι.
+                Κάποια από τα στοιχεία (elements) της σελίδας προστίθενται και
+                αφαιρούνται δυναμικά, μέσα από τη JavaScript, π.χ. οι σημαίες 
+                των γειτονικών χωρών κ.ά.
+                let array = [];
+
+*******************************************************
+            -->
+    </div>
+</body>
+<script src="flag.js"></script>
+</html>

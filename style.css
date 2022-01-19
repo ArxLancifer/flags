@@ -1,0 +1,257 @@
+/*
+Ενδεικτικοί επιλογείς για τη διαμόρφωση του στυλ
+
+Μπορείτε να προσθέσετε τις δηλώσεις στους παρακάτω κανόνες και να εμπλουτίσετε με δικούς σας κανόνες.
+*/
+
+
+/* Χρειάζεται για να φανούν οι σημαίες στους φυλλομετρητές chrome-based από Windows 10 */
+
+@font-face {
+    font-family: 'TwemojiMozilla';
+    src: url('TwemojiMozilla.ttf');
+}
+
+body {
+    margin: 40px;
+    font-family: 'Open Sans', 'TwemojiMozilla';
+    /* Η γραμματοσειρά open sans φορτώνεται στο αρχείο html*/
+    background-color: #fff;
+    color: #444;
+    position: relative;
+}
+
+.game-panel {
+
+    display: flex;
+    justify-content: center;
+    /* ... */
+}
+
+@media screen and  (max-width: 860px) {
+    #sidebar {
+      margin-bottom: 0.5em; 
+      width: auto;       
+    }
+    .game-panel{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+    #sidebar>button{
+        margin: 0.5em;
+    }
+    
+    /* ενδεικτικά */
+    /*  ... */
+}
+@media screen and  (min-width: 860px){
+    #sidebar{width:15em;}
+}
+
+#sidebar>button{
+    margin:0.5em;
+}
+
+#my-country {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1; 
+}
+
+#my-country p {
+    justify-self: right;
+}
+
+#sidebar {
+    display: grid;
+    text-align: center;
+    background-color: #ff3296;
+    color: white;
+    border-radius: 5px;
+    margin-right: 0.5em;  
+}
+
+#score { 
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+#neighbours-panel {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    position: relative;
+    justify-content: initial;
+    
+    
+    
+}
+
+.neighbour {}
+
+.neighbour-is-valid {
+    border: 2px solid green;
+
+}
+
+.neighbour-is-invalid {
+    border: 2px solid red;
+}
+
+.neighbour:not(.was-clicked) {}
+
+#my-country-flag {
+    display:flex;
+    background-color: #6f7f91;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    padding-left: 1em;
+    align-items: center;
+}
+#my-country-flag p {
+    color:white;
+    position: relative;
+    padding-right: 80%;
+    margin-left: 2%;
+    
+    
+}
+
+#my-country-name {}
+
+#next-round-panel {
+    visibility: hidden;
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(50, 50, 50,0.6);
+    
+}
+.warning{
+    position: relative;
+    top:40%;
+    font-size: 1.5em;
+    font-weight: 700;
+    z-index: 100;
+    
+}
+
+
+#progress {
+    border-radius: 5px;
+    background-color: #e7e6e8;
+    height: 1.4em;
+    position: sticky;
+    background-color: rgb(216, 215, 215);
+    top: 0;
+    margin:0;
+}
+#progress div{
+    position:absolute;
+    display: none;
+    height: 1.4em;
+    background-color: royalblue;
+    z-index: 100;
+    border-radius: 5px;
+    
+}
+
+
+/* ειδικά για τους φυλλομετρητές που προέρχονται από τον chrome καθώς 
+υποστηρίζουν λιγότερο καλά το στοιχείο progress από ότι ο firefox,
+όσον αφορά το CSS (που και σε αυτόν έχει προβληματική υποστήριξη)
+*/
+
+#progress::-webkit-progress-bar {
+    border-radius: 5px;
+}
+
+button{
+    height: 3.5em;
+    width: auto;
+    border:none;
+    border-radius: 2px;
+    margin: 0 0.5em;
+    cursor: pointer; 
+}
+button:disabled {
+    cursor: not-allowed;
+    background-color: rgb(230, 230, 230);
+    color:rgba(211, 211, 211, 1);
+    
+}
+
+
+span{
+    font-size: 4em;
+    text-shadow: 2px 1px 10px;
+    cursor: pointer;
+}
+#neighbours-panel div {
+    
+    border-radius: 5px;
+    margin-bottom:0.5em;
+    
+    flex-grow: 1;
+    flex-basis: 20%;
+    
+}
+#neighbours-panel div {
+ margin: 0.5em;
+
+}
+
+body>:first-child{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.8);
+   
+    color: white;
+    z-index: 100;
+}
+
+body>:first-child div {
+    background-color:  rgb(255, 255, 255);
+    color: black;
+    position: relative;
+    top: 50%;
+    left: 45%;
+    width: 14em;
+    height: 7em;
+    text-align: center;
+}
+body>:first-child div:first-child div{
+    position: relative;
+    background-color: rgb(224, 224, 224);
+    top:0;
+    left:0;
+    height: 3.3em;
+    border: none;
+    
+    
+}
+body>:first-child button{
+    width: 6em;
+    height: 2em;
+    margin-top: 1em;
+    
+}
+body>:first-child p {
+    font-size: 0.9em;
+    padding-top: 1em;
+}
+
+
+
